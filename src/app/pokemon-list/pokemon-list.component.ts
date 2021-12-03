@@ -11,6 +11,7 @@ export class PokemonListComponent implements OnInit {
   public listPokemons: any;
   public offset: number = 0;
   public emitPokemonId: number = 0;
+  public display: boolean = true;
   constructor(public services: ConfigService) {}
 
 
@@ -27,7 +28,7 @@ export class PokemonListComponent implements OnInit {
     this.services.getPokemons(this.offset).subscribe(
       (items) => {
         this.listPokemons = items;
-        console.log(this.listPokemons)
+        this.display = false;
       },
       (error) => console.log(error)
     );

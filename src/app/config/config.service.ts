@@ -21,10 +21,20 @@ export class ConfigService {
    */
   getPokemons(offset: number): Observable<Object> {
     return this.http.get(`${APPCONFIG.BASE_URL}/?offset=${offset}&limit=10`, httpOptions).pipe(
-      catchError(this.handleError('findList', []))
+      catchError(this.handleError('getError', []))
     );
   }
 
+  /**
+   * Get information of one pokemon
+   * @param id id number of pokemon
+   * @returns
+   */
+  getPokemonById(id: number): Observable<Object> {
+    return this.http.get(`${APPCONFIG.BASE_URL}/${id+1}`, httpOptions).pipe(
+      catchError(this.handleError('getError', []))
+    );
+  }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

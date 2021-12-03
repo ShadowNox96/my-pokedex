@@ -1,7 +1,33 @@
 <div class="description__container">
   <div class="back__screen-description">
-    <div class="screen">
-      <h1>Pokemon</h1>
+    <div *ngIf="pokemon" class="screen">
+      <h1 class="secondary__text">Pokemon</h1>
+      <!-- Pokemon Img -->
+      <img src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}}" class="pokemon__img">
+      <!-- Pokemon Information -->
+      <div class="pokemon__information">
+        <table class="table__information">
+          <thead>
+            <tr>
+              <th>Peso</th>
+              <th>Altura</th>
+              <th>Experiencia Base</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{{pokemon.weight}}</th>
+              <th>{{pokemon.height}}</th>
+              <th>{{pokemon.base_experience}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Screen Fotter -->
+      <div class="screen__footer">
+        <p>#{{pokemon.id}}</p>
+        <p>Nombre: {{pokemon.name}}</p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,10 +1,18 @@
 <div class="list__container">
   <h1 class="primary__text title">Lista de Pokemons</h1>
+  <div *ngIf="display" class="spinner">
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+    <div class="rect3"></div>
+    <div class="rect4"></div>
+    <div class="rect5"></div>
+  </div>
   <ol *ngIf="listPokemons" class="list__pokemons">
-    <li (click)="emitId(i)" *ngFor="let pokemon of listPokemons.results; index as i">
+    <li (click)="emitId(i)" class="{{emitPokemonId === i ? 'pokemon__active' : ''}}" *ngFor="let pokemon of listPokemons.results; index as i">
       {{pokemon.name}}
     </li>
   </ol>
   <p class="primary__text">Da click en cualquier pokemon para ver más información.</p>
+  <a href="/" class="back__link"> < Volver</a>
 </div>
 <app-pokemon-description  [id]="emitPokemonId" class="pokemon__container"></app-pokemon-description>
