@@ -1,1 +1,8 @@
-<p>pokemon-list works!</p>
+<div class="list__container">
+  <h1 class="primary__text title">Lista de Pokemons</h1>
+  <ol>
+    <li *ngFor="let pokemon of listPokemons.results; index as i">
+      {{pokemon.name}}
+    </li>
+  </ol>
+</div>
