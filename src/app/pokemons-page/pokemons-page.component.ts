@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonDescriptionComponent } from '../pokemon-description/pokemon-description.component';
-import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
 
 
 @Component({

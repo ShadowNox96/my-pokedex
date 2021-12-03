@@ -1,8 +1,10 @@
 <div class="list__container">
   <h1 class="primary__text title">Lista de Pokemons</h1>
-  <ol>
-    <li *ngFor="let pokemon of listPokemons.results; index as i">
+  <ol *ngIf="listPokemons" class="list__pokemons">
+    <li (click)="emitId(i)" *ngFor="let pokemon of listPokemons.results; index as i">
       {{pokemon.name}}
     </li>
   </ol>
+  <p class="primary__text">Da click en cualquier pokemon para ver más información.</p>
 </div>
+<app-pokemon-description  [id]="emitPokemonId" class="pokemon__container"></app-pokemon-description>
