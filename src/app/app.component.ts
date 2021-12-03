@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'radiadores-la-torre';
+  person = {
+    name: 'Emanuel',
+    age: 24
+  }
+  names: string[] = ['Emanuel', 'Julian', 'Pedro'];
 }
