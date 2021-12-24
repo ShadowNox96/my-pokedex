@@ -1,7 +1,10 @@
 # My Pokedex
-This a project developed in angular, it use: 
+This a project developed in angular, it use:
+
 	- Http request
+
 	- Routing
+
 	- Data transfering between components
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
